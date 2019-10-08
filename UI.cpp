@@ -3,8 +3,8 @@
 void UI::showInstructions()
 {
 	std::string instr = 
-		"Step 1: Make sure the chat window you will to spam is visible and not covered by any other window. \n"
-		"Step 2: ...";
+		"Step 1: Make sure the chat window you wish to spam is visible and not covered by any other window. \n"
+		"Step 2: ... \n";
 
 	std::cout << instr << std::endl;
 }
