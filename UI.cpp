@@ -20,3 +20,17 @@ POINT UI::askForCursorDestinationPos()
 
 	return p;
 }
+
+void UI::waitForUserInputToStopThread()
+{
+	constexpr char awaitedStr[] = "stop";
+
+	std::cout << "Type '"<< awaitedStr << "' to stop spamming..." << std::endl;
+	std::string str;
+
+	while (str != awaitedStr)
+	{
+		str = "";
+		std::cin >> str;
+	}
+}

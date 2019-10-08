@@ -1,13 +1,11 @@
 #pragma comment(lib, "user32.lib")
 
+#include <thread>
 #include "UI.h"
 #include "Spammer.h"
 
 int main()
 {
-	/*HWND currentWindow = GetForegroundWindow();
-	HWND spamWindow = currentWindow;*/
-
 	//while (spamWindow == currentWindow)
 	//{
 	//	Sleep(100); // otherwise GetForegroundWindow() returns 0
@@ -19,7 +17,12 @@ int main()
 
 	POINT cursorDestinationPos = ui.askForCursorDestinationPos();
 	Spammer spammer(cursorDestinationPos);
-	spammer.startSpam();
+	std::thread spammerThread(&Spammer::startSpam, &spammer);
+
+	ui.waitForUserInputToStopThread();
+
+	spammer.stopSpam();
+	spammerThread.join();
 
 	return 0;
 }

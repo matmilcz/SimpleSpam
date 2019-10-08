@@ -25,7 +25,7 @@ void KeyboardController::releaseKey(WORD key)
 void KeyboardController::ctrlC()
 {
 	// TODO: output to change
-	const char* output = "Test!";
+	const char* output = "Test! ¹œ¿æŸó³ê";
 	const size_t len = strlen(output) + 1;
 	HGLOBAL hMem = GlobalAlloc(GMEM_MOVEABLE, len);
 	memcpy(GlobalLock(hMem), output, len);

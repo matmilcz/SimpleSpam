@@ -9,5 +9,6 @@ class UI
 public:
 	void showInstructions();
 	POINT askForCursorDestinationPos();
+	void waitForUserInputToStopThread();
 };
 

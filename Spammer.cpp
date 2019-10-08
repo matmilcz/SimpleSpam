@@ -11,31 +11,47 @@ void Spammer::startSpam()
 
 	while (isRunning)
 	{
+		currentWindow = GetForegroundWindow();
 		cursorController.updateCursorReturnPos();
 		cursorController.moveCursorToDestinationPos();
 
 		keyboardController.ctrlC();
-		/*currentWindow = GetForegroundWindow();
+		/*
 		if (not IsIconic(spamWindow))
 		{
 			SetForegroundWindow(spamWindow);
-		}*/
+		}
+		*/
 
 		cursorController.leftClick();
 		keyboardController.ctrlV();
 		keyboardController.enter();
 
-		//SetForegroundWindow(currentWindow);
+		SetForegroundWindow(currentWindow);
 		cursorController.moveCursorToReturnPos();
 
-		Sleep(spamInterval);
-
-		checkIfShouldStop();
+		waitTillNextSpam();
 	}
 }
 
-bool Spammer::checkIfShouldStop()
+void Spammer::stopSpam()
 {
-	//std::streambuf* pbuf = std::cin.rdbuf();
-	return false;
+	isRunning = false;
+}
+
+void Spammer::waitTillNextSpam()
+{
+	unsigned int sleepCounter = spamInterval;
+	while (sleepCounter > 0)
+	{
+		if (isRunning)
+		{
+			std::this_thread::sleep_for(std::chrono::milliseconds(1));
+			--sleepCounter;
+		}
+		else
+		{
+			break;
+		}
+	}
 }
