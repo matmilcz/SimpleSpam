@@ -154,11 +154,13 @@
     <ClCompile Include="CursorController.cpp" />
     <ClCompile Include="KeyboardController.cpp" />
     <ClCompile Include="SimpleSpam.cpp" />
+    <ClCompile Include="Spammer.cpp" />
     <ClCompile Include="UI.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="CursorController.h" />
     <ClInclude Include="KeyboardController.h" />
+    <ClInclude Include="Spammer.h" />
     <ClInclude Include="UI.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

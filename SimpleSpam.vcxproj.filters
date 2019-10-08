@@ -27,6 +27,9 @@
     <ClCompile Include="CursorController.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="Spammer.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="UI.h">
@@ -36,6 +39,9 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="CursorController.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Spammer.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
