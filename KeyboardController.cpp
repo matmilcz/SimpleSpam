@@ -22,10 +22,9 @@ void KeyboardController::releaseKey(WORD key)
 	SendInput(1, &ip, sizeof(INPUT));
 }
 
-void KeyboardController::ctrlC()
+void KeyboardController::ctrlC(const std::string& stringToCopy)
 {
-	// TODO: output to change
-	const char* output = "Test! ¹œ¿æŸó³ê";
+	const char* output = stringToCopy.c_str();
 	const size_t len = strlen(output) + 1;
 	HGLOBAL hMem = GlobalAlloc(GMEM_MOVEABLE, len);
 	memcpy(GlobalLock(hMem), output, len);

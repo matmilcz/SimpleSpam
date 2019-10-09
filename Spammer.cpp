@@ -1,4 +1,5 @@
 #include "Spammer.h"
+#include "Quoter.h"
 
 Spammer::Spammer(const POINT& _cursorDestinationPos)
 {
@@ -7,15 +8,16 @@ Spammer::Spammer(const POINT& _cursorDestinationPos)
 
 void Spammer::startSpam()
 {
-	isRunning = true;
+	Quoter quoter;
 
+	isRunning = true;
 	while (isRunning)
 	{
 		currentWindow = GetForegroundWindow();
 		cursorController.updateCursorReturnPos();
 		cursorController.moveCursorToDestinationPos();
-
-		keyboardController.ctrlC();
+		
+		keyboardController.ctrlC(quoter.getRandomQuote());
 		/*
 		if (not IsIconic(spamWindow))
 		{

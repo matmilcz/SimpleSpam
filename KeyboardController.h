@@ -1,13 +1,14 @@
 #pragma once
 
 #include <windows.h>
+#include <string>
 
 class KeyboardController
 {
 public:
 	KeyboardController();
 
-	void ctrlC();
+	void ctrlC(const std::string& stringToCopy);
 	void ctrlV();
 	void enter();
 

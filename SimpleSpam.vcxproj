@@ -153,6 +153,7 @@
   <ItemGroup>
     <ClCompile Include="CursorController.cpp" />
     <ClCompile Include="KeyboardController.cpp" />
+    <ClCompile Include="Quoter.cpp" />
     <ClCompile Include="SimpleSpam.cpp" />
     <ClCompile Include="Spammer.cpp" />
     <ClCompile Include="UI.cpp" />
@@ -160,8 +161,12 @@
   <ItemGroup>
     <ClInclude Include="CursorController.h" />
     <ClInclude Include="KeyboardController.h" />
+    <ClInclude Include="Quoter.h" />
     <ClInclude Include="Spammer.h" />
     <ClInclude Include="UI.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="quotes.txt" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

@@ -30,6 +30,9 @@
     <ClCompile Include="Spammer.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="Quoter.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="UI.h">
@@ -44,5 +47,13 @@
     <ClInclude Include="Spammer.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="Quoter.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="quotes.txt">
+      <Filter>Resource Files</Filter>
+    </Text>
   </ItemGroup>
 </Project>
