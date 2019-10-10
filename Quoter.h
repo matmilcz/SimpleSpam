@@ -1,8 +1,8 @@
 #pragma once
 
 #include <string>
-#include <ctime>
 #include <fstream>
+#include <random>
 
 class Quoter
 {
@@ -17,5 +17,6 @@ private:
 
 	unsigned int countNumOfAvailableQuotes(std::ifstream& file);
 	unsigned int chooseRandomQuoteNumber();
+	unsigned int generateRandomNumber(const unsigned int first, const unsigned int last);
 };
 

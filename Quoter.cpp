@@ -6,8 +6,6 @@ Quoter::Quoter()
 	auto numOfQuotes = countNumOfAvailableQuotes(file);
 	numOfAvailableQuotes = numOfQuotes;
 	file.close();
-
-	srand(static_cast<unsigned int>(time(nullptr)));
 }
 
 std::string Quoter::getRandomQuote()
@@ -53,5 +51,15 @@ unsigned int Quoter::countNumOfAvailableQuotes(std::ifstream& file)
 
 unsigned int Quoter::chooseRandomQuoteNumber()
 {
-	return rand() % numOfAvailableQuotes;
+	constexpr unsigned int numOfFirstLine = 1;
+	return generateRandomNumber(numOfFirstLine, numOfAvailableQuotes);
+}
+
+unsigned int Quoter::generateRandomNumber(const unsigned int first, const unsigned int last)
+{
+	std::uniform_int_distribution<unsigned int> distribution(first, last);
+	std::random_device rd;
+	std::default_random_engine generator(rd());
+
+	return distribution(generator);
 }
