@@ -15,7 +15,7 @@ public:
 private:
 	INPUT ip;
 
-	void pressKey(WORD key);
-	void releaseKey(WORD key);
+	void pressKey(const WORD key);
+	void releaseKey(const WORD key);
 };
 

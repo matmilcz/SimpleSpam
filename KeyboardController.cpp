@@ -8,14 +8,14 @@ KeyboardController::KeyboardController()
 	ip.ki.dwExtraInfo = 0;
 }
 
-void KeyboardController::pressKey(WORD key)
+void KeyboardController::pressKey(const WORD key)
 {
 	ip.ki.wVk = key;
 	ip.ki.dwFlags = 0; // 0 for key press
 	SendInput(1, &ip, sizeof(INPUT));
 }
 
-void KeyboardController::releaseKey(WORD key)
+void KeyboardController::releaseKey(const WORD key)
 {
 	ip.ki.wVk = key;
 	ip.ki.dwFlags = KEYEVENTF_KEYUP;
