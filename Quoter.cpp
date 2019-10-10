@@ -3,8 +3,7 @@
 Quoter::Quoter()
 {
 	std::ifstream file(fileWithQuotes, std::ifstream::in);
-	auto numOfQuotes = countNumOfAvailableQuotes(file);
-	numOfAvailableQuotes = numOfQuotes;
+	numOfAvailableQuotes = countNumOfAvailableQuotes(file);
 	file.close();
 }
 
