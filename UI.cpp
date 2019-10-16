@@ -9,6 +9,17 @@ void UI::showInstructions()
 	std::cout << instr << std::endl;
 }
 
+void UI::showMenu()
+{
+	unsigned int i = 0;
+	for (auto menuPos : menu)
+	{
+		++i;
+		std::cout << i << ". " << menuPos.first << std::endl;
+	}
+	//menu[0].second(this);
+}
+
 POINT UI::askForCursorDestinationPos()
 {
 	std::cout << "Please, set proper cursor position and press a key to continue..." << std::endl;

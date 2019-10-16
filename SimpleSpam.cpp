@@ -13,7 +13,7 @@ int main()
 	//}
 
 	UI ui;
-	ui.showInstructions();
+	ui.showMenu();
 
 	POINT cursorDestinationPos = ui.askForCursorDestinationPos();
 	Spammer spammer(cursorDestinationPos);
